@@ -39,6 +39,6 @@
 
 * [@Arshiya](https://github.com/arshiya786-af)
 * [@Mohammad](https://github.com/ahtishamkhan5678)
-* [@Lalit Singh](https://github.com/)
-* [@Lakhan](https://github.com/)
-* [@Para Aghi](https://github.com/)
+* [@Lalit Singh](https://github.com/lalitsingh28)
+* [@Lakhan](https://github.com/lakhan1122)
+* [@Para Aghi](https://github.com/PARAS-AGHI)
