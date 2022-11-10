@@ -15,14 +15,22 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 public class Route {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer routeId;
-	
 	@NotNull(message = "Start point cannot be null!")
 	@NotBlank(message = "Start point cannot be blank!")
 	private String routeFrom;
@@ -30,45 +38,29 @@ public class Route {
 	@NotNull(message = "Destination point cannot be null!")
 	@NotBlank(message = "Destination point cannot be blank!")
 	private String routeTo;
-	
 	private Integer distance;
 	
-//	@OneToMany(cascade = CascadeType.ALL)
-//	private List<Bus> busList = new ArrayList<>();
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Bus> busList = new ArrayList<>();
 
-	public Integer getRouteId() {
-		return routeId;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Route other = (Route) obj;
+		return Objects.equals(distance, other.distance) && Objects.equals(routeFrom.toLowerCase(), other.routeFrom.toLowerCase())
+				&& Objects.equals(routeId, other.routeId) && Objects.equals(routeTo.toLowerCase(), other.routeTo.toLowerCase());
 	}
 
-	public void setRouteId(Integer routeId) {
-		this.routeId = routeId;
+	@Override
+	public int hashCode() {
+		return Objects.hash(distance, routeFrom, routeId, routeTo);
 	}
-
-	public String getRouteFrom() {
-		return routeFrom;
-	}
-
-	public void setRouteFrom(String routeFrom) {
-		this.routeFrom = routeFrom;
-	}
-
-	public String getRouteTo() {
-		return routeTo;
-	}
-
-	public void setRouteTo(String routeTo) {
-		this.routeTo = routeTo;
-	}
-
-	public Integer getDistance() {
-		return distance;
-	}
-
-	public void setDistance(Integer distance) {
-		this.distance = distance;
-	}
-	
-	
 	
 	
 	

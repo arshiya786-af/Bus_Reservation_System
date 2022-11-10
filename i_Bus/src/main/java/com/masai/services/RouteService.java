@@ -12,9 +12,9 @@ public interface RouteService {
 	
 	public Route updateRoute(Route route,String key) throws RouteException, AdminException;
 	
-	public Route deleteRoute(int routeId,String key) throws RouteException, AdminException;
+	public Route deleteRoute(Integer routeId,String key) throws RouteException, AdminException;
 	
-	public Route viewRoute(int routeId) throws RouteException;
+	public Route viewRoute(Integer routeId) throws RouteException;
 	
 	public List<Route> viewAllRoute() throws RouteException;
 	
