@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
@@ -18,8 +19,6 @@ import nonapi.io.github.classgraph.json.Id;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Feedback {
 
 	@Id
@@ -29,7 +28,7 @@ public class Feedback {
 	
 	@Min(value=1, message="Rating must be in range of 1-5")  
 	@Max(value=5, message="Rating must be in range of 1-5") 
-	private Integer serviceRatng;
+	private Integer serviceRating;
 	private Integer overallRating;
 	private String comments;
 	private LocalDate feedbackdate;
@@ -48,7 +47,7 @@ public class Feedback {
 		super();
 		this.feedbackId = feedbackId;
 		this.driverRating = driverRating;
-		this.serviceRatng = serviceRatng;
+		this.serviceRating = serviceRating;
 		this.overallRating = overallRating;
 		this.comments = comments;
 		this.feedbackdate = feedbackdate;
@@ -67,10 +66,10 @@ public class Feedback {
 		this.driverRating = driverRating;
 	}
 	public Integer getServiceRatng() {
-		return serviceRatng;
+		return serviceRating;
 	}
 	public void setServiceRatng(Integer serviceRatng) {
-		this.serviceRatng = serviceRatng;
+		this.serviceRating = serviceRatng;
 	}
 	public Integer getOverallRating() {
 		return overallRating;
@@ -91,11 +90,11 @@ public class Feedback {
 		this.feedbackdate = feedbackdate;
 	}
 	
-//	@OneToOne
-//	private User users;
-//	
-//	@OneToOne
-//	private Bus bus;
+	@OneToOne
+	private User users;
+	
+	@OneToOne
+	private Bus bus;
 	
 	
 	
