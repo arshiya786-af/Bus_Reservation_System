@@ -30,7 +30,7 @@ public class UserController {
 		 return userservice.updateUser(user);
 	 }
 	 @RequestMapping(value="/getallusers",method=RequestMethod.GET)
-		public java.util.List<User> getAllUsers(){
+		public java.util.List<User> getAllUser(){
 			return userservice.viewAllUser();
 		}
 }
