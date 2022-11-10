@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.masai.models.User;
-import com.masai.exception.UserAlreadyExistException;
-import com.masai.exception.UserNotFoundException;
-import com.masai.repository.userdao;
+import com.masai.exceptions.UserAlreadyExistException;
+import com.masai.exceptions.UserNotFoundException;
+import com.masai.repository.UserDao;
 @Service
 public class UserServiceImp implements UserService {
 
@@ -28,7 +28,7 @@ public class UserServiceImp implements UserService {
 	}
 
 	@Override
-	public String updateUser(Users user){
+	public String updateUser(User user){
 		Optional<User> us = userdao.findById(user.getUserLoginId());
 		if(us.isPresent()) {
 			userdao.save(user);
@@ -54,7 +54,7 @@ public class UserServiceImp implements UserService {
 	}
 
 	@Override
-	public List<User> viewAllUsers() {
+	public List<User> viewAllUser() {
 		return userdao.findAll();
 	}
 
