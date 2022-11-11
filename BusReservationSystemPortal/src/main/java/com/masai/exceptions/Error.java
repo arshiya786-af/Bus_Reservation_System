@@ -10,7 +10,7 @@ public class Error {
 	private LocalDateTime timestamp;
 	private String message;
 	private String details;
-	
+	 
 	public Error() {
 		
 	}
