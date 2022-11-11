@@ -1,5 +1,7 @@
 # iBus  REST API for Bus Reservation System Portal 
-![iBuslogo-removebg-preview](https://user-images.githubusercontent.com/100846744/200823463-827828d9-f686-4bc4-a9d5-eb1df69472e7.png)
+
+<img src="https://user-images.githubusercontent.com/100846744/200823463-827828d9-f686-4bc4-a9d5-eb1df69472e7.png"/><img align="right" src="https://media1.giphy.com/media/j375yFxei6JtEcDA65/giphy.gif?cid=6c09b952j6fzqoryrmfw9um982tnnvbg9v3wmxffm828lkol&rid=giphy.gif&ct=s" />
+
 * We have developed this REST API for a Bus Reservation System Portal Application. This API performs all the fundamental CRUD operations of any Bus Reservation Application platform with user validation at every step.
 * This project is developed by team of 5 Back-end Developers during project week in Masai School. 
 
@@ -41,3 +43,6 @@
 * [@Lalit Singh](https://github.com/lalitsingh28)
 * [@Lakhan](https://github.com/lakhan1122)
 * [@Para Aghi](https://github.com/PARAS-AGHI)
+
+##
+<img  align="center" src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&amp;color=FF5733&amp;size=20&amp;lines=Thanks!+For+Visiting+On+My+Project!;See+You+Next-Time+Hope+u+like+its...👨🏻‍💻;" style="width: 70%;">

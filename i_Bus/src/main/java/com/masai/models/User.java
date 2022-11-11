@@ -1,27 +1,40 @@
 package com.masai.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name="user")
 public class User{
-	   @Id
-	   @GeneratedValue(strategy = GenerationType.AUTO)
-    private int userLoginId;
-    private String userName;
-    private String password;
-    private String firstName;
-    private String lastName;
-    private long contact;
-    private String email;
-    private Reservation reservation;
-    public User() {
-    	super();
-
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="userid")
+	private int userLoginId;
+	@Column(name="username")
+	private String userName;
+	@Column(name="password")
+	private String password;
+	@Column(name="firstname")
+	private String firstName;
+	@Column(name="lastname")
+	private String lastName;
+	@Column(name="contact")
+	private long contact;
+	@Column(name="email")
+	private String email;
+	
+    @OneToOne
+	private Reservation reservation;
+	public User() {
+		super();
+		
+	}
     public User(int userLoginId, String userName, String password, String firstName, String lastName, long contact,String email) {
         this.userLoginId = userLoginId;
         this.userName = userName;

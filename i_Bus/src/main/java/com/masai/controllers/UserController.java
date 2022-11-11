@@ -1,19 +1,20 @@
 package com.masai.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.models.User;
-import com.masai.services.UserService;
+import com.masai.services.UserServiceImp;
 
 
 @RestController
 public class UserController {
 
-	@Autowired UserService userservice;
+	@Autowired UserServiceImp userservice;
 	
 	
 	
@@ -29,7 +30,7 @@ public class UserController {
 		 return userservice.updateUser(user);
 	 }
 	 @RequestMapping(value="/getallusers",method=RequestMethod.GET)
-		public java.util.List<User> getAllUsers(){
+		public java.util.List<User> getAllUser(){
 			return userservice.viewAllUser();
 		}
 }
