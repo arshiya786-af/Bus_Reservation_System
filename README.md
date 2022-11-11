@@ -43,3 +43,6 @@
 * [@Lalit Singh](https://github.com/lalitsingh28)
 * [@Lakhan](https://github.com/lakhan1122)
 * [@Para Aghi](https://github.com/PARAS-AGHI)
+
+##
+<img  align="center" src="https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&amp;color=FF5733&amp;size=20&amp;lines=Thanks!+For+Visiting+On+My+Project!;See+You+Next-Time+Hope+u+like+its...👨🏻‍💻;" style="width: 70%;">
