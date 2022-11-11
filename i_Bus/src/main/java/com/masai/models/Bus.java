@@ -1,11 +1,19 @@
 package com.masai.models;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Bus {
@@ -13,15 +21,42 @@ public class Bus {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer busId;
+	
+	@NotNull(message = "Bus name cannot be null!")
 	private String busName;
+	
+	@NotNull(message = "Driver name cannot be null!")
 	private String driverName;
+	
+	
 	private String busType;
+	
+	@NotNull(message = "Start point cannot be null!")
+	@NotBlank(message = "Start point cannot be blank!")
 	private String routeFrom;
+	
+	@NotNull(message = "End point cannot be null!")
+	@NotBlank(message = "End point cannot be blank!")
 	private String routeTo;
+	
+	
+	@NotNull(message = "Arrival time cannot be null!")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
 	private LocalTime arrivalTime;
+	
+	
+	@NotNull(message = "Departure time cannot be null!")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
 	private LocalTime departureTime;
+	
+	@NotNull(message = "Total Seats cannot be null!")
 	private Integer seats;
+	
+	@NotNull(message = "Available seats cannot be null!")
 	private Integer availableSeats;
+	
+	
+	
 	public Integer getBusId() {
 		return busId;
 	}
@@ -88,6 +123,37 @@ public class Bus {
 				+ ", routeFrom=" + routeFrom + ", routeTo=" + routeTo + ", arrivalTime=" + arrivalTime
 				+ ", departureTime=" + departureTime + ", seats=" + seats + ", availableSeats=" + availableSeats + "]";
 	}
+	
+	
+	
+	@ManyToOne
+	private Route route;
+
+
+
+	public Route getRoute() {
+		return route;
+	}
+	public void setRoute(Route route) {
+		this.route = route;
+	}
+	
+	
+	@NotNull(message = "Bus journey date cannot be null!")
+	@JsonFormat(pattern="yyyy-MM-dd")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	private LocalDate busJourneyDate;
+
+
+
+	public LocalDate getBusJourneyDate() {
+		return busJourneyDate;
+	}
+	public void setBusJourneyDate(LocalDate busJourneyDate) {
+		this.busJourneyDate = busJourneyDate;
+	}
+	
+	
 	
 	
 
