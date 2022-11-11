@@ -106,7 +106,7 @@
 
 `POST   localhost:8888/login/admin`
 
-* Request Body
+* Sample Request Body
 
 ```
     {
@@ -115,10 +115,10 @@
     }
 ```
 
-* Response
+* Sample Response Body
 
 ```
-   CurrentAdminSession( adminId=10, uuid=ZaVLaK,localDatetime=2022-11-11 12:29:52.376508)
+   CurrentAdminSession( adminId=1, uuid=uUcWXg,localDatetime=2022-11-11 12:29:52.376508)
    
 ```
 
