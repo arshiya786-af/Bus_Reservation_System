@@ -40,7 +40,7 @@
 * [@Mohammad](https://github.com/ahtishamkhan5678)
 * [@Lalit Singh](https://github.com/lalitsingh28)
 * [@Lakhan](https://github.com/lakhan1122)
-* [@Para Aghi](https://github.com/PARAS-AGHI)
+* [@Paras Aghi](https://github.com/PARAS-AGHI)
 
 ## Installation & Run
 
